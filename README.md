@@ -1,7 +1,13 @@
 #S3 ManagedUpload
 
-### S3桶的CROS配置
+### Start
+``` 
+git clone https://github.com/leonli/S3Upload
+npm install & npm start
 ```
+
+### S3桶的CROS配置
+``` xml
 <?xml version="1.0" encoding="UTF-8"?>
 <CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
 <CORSRule>
@@ -18,7 +24,7 @@
 ```
 
 ### 参数说明
-```
+``` javascript
 var upload = s3.upload(params, {
         queueSize: 1, // 分片上传并发队列，代表了能同时上传的分片数量
         connectTimeout:60 * 1000 * 10, // 连接timeout时间
