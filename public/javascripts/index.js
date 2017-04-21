@@ -15,9 +15,12 @@ mybutton.addEventListener('click', function() {
          Bucket: 'testupload111', Key: file.name,
          Body: file
         };
-        var upload = s3.upload(params, {queueSize: 1,connectTimeout:60 * 1000 * 10 , httpOptions: {
-        timeout: 60 * 1000 * 10 // 10 minutes
-        }}).on('httpUploadProgress', function(e) {
+        var upload = s3.upload(params, {
+        queueSize: 1, // 分片上传并发队列，代表了能同时上传的分片数量
+        connectTimeout:60 * 1000 * 10, // 连接timeout时间
+        httpOptions: {
+            timeout: 60 * 1000 * 10 // 10 minutes
+        }}).on('httpUploadProgress', function(e) { // 进度条事件
             var precent = parseInt(e.loaded, 10) / parseInt(e.total, 10);
             precent = precent.toFixed(2) * 100;
             setTimeout(function() {
