@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aws-sdk/2.43.0/aws-sdk.min.js"></script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <p>
+    <input type="file" id="hello-file"/>
+    </p>
+    <button id="upload-button">upload</button>
+    <p>
+    <label id="progress"></label>
+    </p>
+  </body>
+  <script src="/javascripts/index.js"></script>
+</html>
